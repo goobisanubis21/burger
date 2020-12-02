@@ -10,13 +10,13 @@ router.get("/", function(req, res) {
 });
 
 // Create all our routes and set up logic within those routes where required.
-router.get("/cats", function(req, res) {
-  cat.all(function(data) {
-    res.json({ cats: data });
+router.get("/burgers", function(req, res) {
+  burger.all(function(data) {
+    res.json({ burgers: data });
   });
 });
 
-router.post("/burger", function(req, res) {
+router.post("/burgers", function(req, res) {
   burger.create([
     "name", "sleepy"
   ], [
@@ -26,7 +26,7 @@ router.post("/burger", function(req, res) {
    });
 });
 
-router.put("/burger/:id", function(req, res) {
+router.put("/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
   console.log("condition", condition);
@@ -43,7 +43,7 @@ router.put("/burger/:id", function(req, res) {
   });
 });
 
-router.delete("/burger/:id", function(req, res) {
+router.delete("/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
   burger.delete(condition, function(result) {
