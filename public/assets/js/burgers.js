@@ -11,7 +11,7 @@ $(function () {
                 var uneatenEl = "<li class= 'notEaten'>" + burger[i].id + ". " + burger[i].burger + "<button data-id ='" + burger[i].id + "'class = 'devour'>Devour</button></li>";
                 uneaten.append(uneatenEl)
             } else {
-                var eatenEl = "<li class= 'eaten'>" + burger[i].id + ". " + burger[i].burger + "<button data-id ='" + burger[i].id + "'class = 'delete'>Delete</button></li>";
+                var eatenEl = "<li class= 'wasEaten'>" + burger[i].id + ". " + burger[i].burger + "<button data-id ='" + burger[i].id + "'class = 'delete'>Delete</button></li>";
                 eaten.append(eatenEl)
             }
         }
