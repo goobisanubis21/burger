@@ -8,10 +8,10 @@ $(function () {
         const len = burger.length;
         for (var i = 0; i < len; i++) {
             if (burger[i].devoured === 0) {
-                var uneatenEl = '<li class= "notEaten">' + burger[i].id + '. ' + burger[i].burger + '<button class = devour>Devour</button></li>';
+                var uneatenEl = "<li class= 'notEaten'>" + burger[i].id + ". " + burger[i].burger + "<button data-id ='" + burger[i].id + "'class = 'devour'>Devour</button></li>";
                 uneaten.append(uneatenEl)
             } else {
-                var eatenEl = '<li class= "eaten">' + burger[i].id + '. ' + burger[i].burger + '<button class = delete>Delete</button></li>';
+                var eatenEl = "<li class= 'eaten'>" + burger[i].id + ". " + burger[i].burger + "<button data-id ='" + burger[i].id + "'class = 'delete'>Delete</button></li>";
                 eaten.append(eatenEl)
             }
         }
