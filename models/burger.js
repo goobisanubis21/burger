@@ -1,6 +1,7 @@
 const connection = require('../config/connection');
 const orm = require('../config/orm');
 
+// creating our burger object with the functions within the object and then exporting it
 const burger = {
     all: function (cb) {
         orm.all('burgers', function (res) {

@@ -36,7 +36,9 @@ function objToSql(ob) {
     return arr.toString();
 }
 
+// creating orm object and then exporting it
 const orm = {
+    // all function selects all data from database
     all: function (table, cb) {
         const queryString = 'SELECT * FROM ' + table;
         console.log(queryString)
@@ -49,6 +51,7 @@ const orm = {
             cb(result);
         })
     },
+    // create function inserts new data into the database
     create: function (table, cols, vals, cb) {
         var queryString = "INSERT INTO " + table;
 
@@ -66,6 +69,7 @@ const orm = {
             cb(result)
         });
     },
+    // update function updates data in the database where id is equal to the list item clicked
     update: function (table, objColVals, condition, cb) {
         var queryString = 'UPDATE ' + table;
 
@@ -83,6 +87,7 @@ const orm = {
             cb(result);
         });
     },
+    // delete function deletes data in the database where id is equal to the list item clicked
     delete: function (table, condition, cb) {
         var queryString = "DELETE FROM " + table;
         queryString += " WHERE ";
