@@ -1,3 +1,4 @@
+// function to display data from database, create list items and add the data to them
 $(function () {
     $.ajax('/burgers', {
         type: 'GET'
@@ -17,6 +18,7 @@ $(function () {
         }
     })
 
+    // on click function to add a new burger to the database when the submit button is clicked on
     $(document).on('click', '#subBtn', function (event) {
         event.preventDefault();
         var title = $('#inputTxt').val().trim()
@@ -34,6 +36,8 @@ $(function () {
             location.reload()
         })
     })
+
+    // fucntion to change the devoured col to true if the devour button is clicked on
     $(document).on('click', '.devour', function () {
         let id = $(this).data('id');
         let eatenBurger = {
@@ -48,6 +52,8 @@ $(function () {
             location.reload();
         })
     })
+
+    // function to delete data from the database when the delete button is clicked on
     $(document).on('click', '.delete', function () {
         let id = $(this).data('id')
         $.ajax('/burgers/' + id, {
